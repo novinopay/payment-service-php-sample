@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "c5d0739e-9761-463b-be29-3c864d7b6fcf",
+		"name": "NovinoPay Payment V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13293506"
+	},
+	"item": [
+		{
+			"name": "payment_request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"merchant_id\": \"xxxxxxxxx-xxxxxxxxx-xxxxxxxxx\",\r\n    \"amount\": \"1000\",\r\n    \"callback_url\": \"https://localhost/Callback\",\r\n    \"callback_method\": \"GET\",\r\n    \"invoice_id\": \"123456\",\r\n    \"description\": \"سفارش تست\",\r\n    \"email\": \"a@b.com\",\r\n    \"mobile\": \"09121234567\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.novinopay.com/payment/ipg/v2/request",
+					"protocol": "https",
+					"host": [
+						"api",
+						"novinopay",
+						"com"
+					],
+					"path": [
+						"payment",
+						"ipg",
+						"v2",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment_verification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"merchant_id\": \"xxxxxxxxx-xxxxxxxxx-xxxxxxxxx\",\r\n    \"amount\": \"1000\",\r\n    \"authority\": \"812F739E41057BAC22331918CD5B41C1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.novinopay.com/payment/ipg/v2/verification",
+					"protocol": "https",
+					"host": [
+						"api",
+						"novinopay",
+						"com"
+					],
+					"path": [
+						"payment",
+						"ipg",
+						"v2",
+						"verification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment_inquiry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"merchant_id\": \"xxxxxxxxx-xxxxxxxxx-xxxxxxxxx\",\r\n    \"authority\": \"812F739E41057BAC22331918CD5B41C2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.novinopay.com/payment/ipg/v2/inquiry",
+					"protocol": "https",
+					"host": [
+						"api",
+						"novinopay",
+						"com"
+					],
+					"path": [
+						"payment",
+						"ipg",
+						"v2",
+						"inquiry"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
